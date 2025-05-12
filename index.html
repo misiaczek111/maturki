@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan Matury</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>📘 Plan Matury</h1>
+    <nav>
+      <button onclick="showSection('planuj')">🗓️ Planuj</button>
+      <button onclick="showSection('zadania')">📄 Zrób zadania</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SEKCJA: PLANUJ -->
+    <section id="planuj" style="display:none;">
+      <h2>🗓️ Kalendarz matur</h2>
+      <p>Wybierz daty swoich matur i zaplanuj naukę.</p>
+      <input type="date" />
+      <input type="text" placeholder="Co chcesz przerobić?" />
+      <button>Dod
