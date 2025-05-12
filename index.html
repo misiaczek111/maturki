@@ -22,4 +22,71 @@
       <p>Wybierz daty swoich matur i zaplanuj naukę.</p>
       <input type="date" />
       <input type="text" placeholder="Co chcesz przerobić?" />
-      <button>Dod
+      <button>Dodaj do planu</button>
+      <!-- (tu dodamy później widok kalendarza + lista zadań) -->
+    </section>
+
+    <!-- SEKCJA: ZRÓB ZADANIA -->
+    <section id="zadania" style="display:none;">
+      <h2>📄 Wybierz przedmiot</h2>
+      <div class="subjects">
+        <button onclick="chooseSubject('polski')">Język polski</button>
+        <button onclick="chooseSubject('matematyka')">Matematyka</button>
+        <button onclick="chooseSubject('angielski')">Angielski</button>
+        <button onclick="chooseSubject('biologia')">Biologia</button>
+        <button onclick="chooseSubject('chemia')">Chemia</button>
+        <!-- więcej przedmiotów -->
+      </div>
+
+      <div id="poziom" style="display:none;">
+        <h3>Wybierz poziom:</h3>
+        <button>Podstawowy</button>
+        <button>Rozszerzony</button>
+        <button>Oba</button>
+      </div>
+
+      <div id="tematy" style="display:none;">
+        <h3>Zestawy tematów</h3>
+        <ul>
+          <li><button onclick="showTasks('lektury')">Lektury obowiązkowe</button></li>
+          <li><button onclick="showTasks('analiza')">Analiza tekstu</button></li>
+          <li><button onclick="showTasks('funkcje')">Funkcje matematyczne</button></li>
+          <!-- dynamicznie generowane tematy -->
+        </ul>
+      </div>
+
+      <div id="zadaniaLista" style="display:none;">
+        <h3>Zadania z wybranego tematu</h3>
+        <ul>
+          <li>Zadanie 1 - <button>Zobacz odpowiedź</button></li>
+          <li>Zadanie 2 - <button>Pokaż arkusz PDF</button></li>
+          <!-- przykładowe zadania -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plan Matury</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      document.getElementById('planuj').style.display = 'none';
+      document.getElementById('zadania').style.display = 'none';
+      document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function chooseSubject(subject) {
+      document.getElementById('poziom').style.display = 
+        (subject === 'polski' || subject === 'matematyka' || subject === 'angielski') ? 'block' : 'none';
+      document.getElementById('tematy').style.display = 'block';
+      document.getElementById('zadaniaLista').style.display = 'none';
+    }
+
+    function showTasks(temat) {
+      document.getElementById('zadaniaLista').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
